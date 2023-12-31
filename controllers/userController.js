@@ -83,3 +83,17 @@ exports.getAllUsers = factory.getAll(User);
 // Do NOT update passwords with this!
 exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
+
+exports.updatePerfil = async (req, res) => {
+const doc = await User.findByIdAndUpdate(req.params.id, req.body, {
+  new: true,
+  runValidators: true
+})
+
+res.status(200).json({
+  status: 'success',
+  data: {
+    user: doc
+  }
+})
+}

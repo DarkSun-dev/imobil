@@ -17,14 +17,18 @@ const userSchema = new mongoose.Schema({
   },
   telefone: {
     type: String,
-    unique: true
+    unique: true,
+    required: [true, 'Please provide your telefone'],
   },
-  whatsapp: String,
+  whatsapp: {
+    type: String,
+    default: "whatspp-number"
+  },
   photo: String,
   role: {
     type: String,
     enum: ['admin', 'user'],
-    default: 'user'
+    default: 'admin'
   },
   password: {
     type: String,

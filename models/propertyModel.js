@@ -12,7 +12,7 @@ const propertSchema = new mongoose.Schema({
         type: Number,
         required: [true, 'Por favor forneça-nos o preço do património!']
     },
-    price_range: Array,
+    whatsapp: String,
     description: {
         type: String,
         required: [true, 'Por favor forneça-nos a descriçãodo património!']
