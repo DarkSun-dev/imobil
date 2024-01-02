@@ -17,6 +17,8 @@ const propertSchema = new mongoose.Schema({
         type: String,
         required: [true, 'Por favor forneça-nos a descriçãodo património!']
     },
+    address: String,
+    province: String,
     class: {
         type: String,
         enun: ['client', 'owner']
@@ -25,6 +27,8 @@ const propertSchema = new mongoose.Schema({
         type: String,
         default: new Date().toLocaleString()
     }
+}, {
+    timestamps: true
 })
 
 const Propert = mongoose.model('Propert', propertSchema);
