@@ -1,5 +1,5 @@
 const Reset = require('../models/resetPassword');
-const client = require('twilio')(process.env.ACCOUNTSID, process.env.AUTHTOKEN)
+//const client = require('twilio')(process.env.ACCOUNTSID, process.env.AUTHTOKEN)
 function gerador(length) {
     var result = '';
     var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -9,6 +9,7 @@ function gerador(length) {
     }
     return result;
 }
+/*
 exports.sendCode = async (req, res) => {
     client.messages
         .create({
@@ -17,7 +18,7 @@ exports.sendCode = async (req, res) => {
             to: '+258' + req.body.telefone
         })
         .then(message => res.send({ status: 'success', log: message }))
-}
+}*/
 
 exports.sendPassword = async (req, res) => {
     const user = await Reset.findOne({ telefone: req.body.telefone })
