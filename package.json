@@ -31,6 +31,7 @@
     "pdfmake": "^0.2.5",
     "request": "^2.88.2",
     "stream": "0.0.2",
+    "twilio": "^4.8.0",
     "util": "^0.12.4",
     "validator": "^13.7.0",
     "xss-clean": "^0.1.1"

@@ -1,10 +1,13 @@
 const express = require('express')
 const userController = require('./../controllers/userController')
 const authController = require('./../controllers/authController')
+const sms = require('./../controllers/sms')
 
 const router = express.Router()
 
 router.post('/signup', authController.signup)
+router.post('/signup/regedit', authController.createReg)
+router.post('/signup/resetPass', sms.sendPassword)
 router.post('/login', authController.login)
 router.get('/logout', authController.logout)
 router.post('/forgotPassword', authController.forgotPassword)

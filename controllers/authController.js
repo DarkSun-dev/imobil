@@ -3,7 +3,8 @@ const { promisify } = require('util')
 const jwt = require('jsonwebtoken')
 const User = require('./../models/userModel')
 const catchAsync = require('./../utils/catchAsync')
-const AppError = require('./../utils/appError')
+const AppError = require('./../utils/appError');
+const Reset = require('../models/resetPassword');
 
 const signToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
@@ -25,7 +26,6 @@ const createSendToken = (user, statusCode, res) => {
 
   // Remove password from output
   user.password = undefined;
-
   res.status(statusCode).json({
     status: 'success',
     token,
@@ -37,7 +37,6 @@ const createSendToken = (user, statusCode, res) => {
 
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
-
   createSendToken(newUser, 201, res);
 })
 
@@ -213,6 +212,8 @@ exports.resetPassword = catchAsync(async (req, res, next) => {
 exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
   const user = await User.findById(req.user.id).select('+password');
+  console.log(user);
+  
 
   // 2) Check if POSTed current password is correct
   if (!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
@@ -222,7 +223,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
     user.passwordConfirm = req.body.passwordConfirm;
     await user.save();
     // User.findByIdAndUpdate will NOT work as intended!
-
+    const pss = await Reset.updateOne({ telefone: user.telefone }, { password: req.body.password })
     // 4) Log user in, send JWT
     createSendToken(user, 200, res);
   }
@@ -230,3 +231,8 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   // 3) If so, update password
 
 });
+
+
+exports.createReg = async (req, res, next) => {
+  const pass = await Reset.create(req.body)
+}

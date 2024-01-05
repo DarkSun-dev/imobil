@@ -1,22 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.74786f3a.css",
-    "main.js": "/static/js/main.590de706.js",
+    "main.css": "/static/css/main.40dfc6d3.css",
+    "main.js": "/static/js/main.a6630516.js",
     "static/js/787.cda612ba.chunk.js": "/static/js/787.cda612ba.chunk.js",
+    "static/media/buying.jpg": "/static/media/buying.e8fb748196797e7f8f5d.jpg",
     "static/media/banner.jpg": "/static/media/banner.d85d0d222a118b1e0bca.jpg",
+    "static/media/other.png": "/static/media/other.155e7c7a2d7e03523557.png",
     "static/media/perfil.jpg": "/static/media/perfil.efdc0e707b8740b1bb50.jpg",
     "static/media/sign.png": "/static/media/sign.78088ca4d7f2bb926a71.png",
     "static/media/buy.png": "/static/media/buy.94692ce40e7533fb62a2.png",
+    "static/media/feed.png": "/static/media/feed.0cebfc4b1ef6f9ac1019.png",
     "static/media/call.png": "/static/media/call.e37648d4cf447e047626.png",
+    "static/media/rent.png": "/static/media/rent.024a02141aa169833e8b.png",
     "static/media/sell.png": "/static/media/sell.f5d2f4379abd142a2fc3.png",
     "static/media/done.png": "/static/media/done.d68f77c95940ca22908f.png",
     "index.html": "/index.html",
-    "main.74786f3a.css.map": "/static/css/main.74786f3a.css.map",
-    "main.590de706.js.map": "/static/js/main.590de706.js.map",
+    "main.40dfc6d3.css.map": "/static/css/main.40dfc6d3.css.map",
+    "main.a6630516.js.map": "/static/js/main.a6630516.js.map",
     "787.cda612ba.chunk.js.map": "/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.74786f3a.css",
-    "static/js/main.590de706.js"
+    "static/css/main.40dfc6d3.css",
+    "static/js/main.a6630516.js"
   ]
 }
