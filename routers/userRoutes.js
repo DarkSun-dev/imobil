@@ -5,8 +5,9 @@ const sms = require('./../controllers/sms')
 
 const router = express.Router()
 
-router.post('/signup', authController.signup)
+router.post('/signup', authController.signup) 
 router.post('/signup/regedit', authController.createReg)
+router.delete('/deleteRegedit/:telefone', authController.deleteReg)
 router.post('/signup/resetPass', sms.sendPassword)
 router.post('/login', authController.login)
 router.get('/logout', authController.logout)

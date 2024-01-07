@@ -213,7 +213,7 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   // 1) Get user from collection
   const user = await User.findById(req.user.id).select('+password');
   console.log(user);
-  
+
 
   // 2) Check if POSTed current password is correct
   if (!(await user.correctPassword(req.body.passwordCurrent, user.password))) {
@@ -235,4 +235,8 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
 
 exports.createReg = async (req, res, next) => {
   const pass = await Reset.create(req.body)
+}
+
+exports.deleteReg = async (req, res, next) => {
+  const pass = await Reset.deleteOne({ telefone: req.params.telefone })
 }

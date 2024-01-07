@@ -9,6 +9,6 @@ router.delete('/deleteItem/:id', propertyController.deleteItem)
 
 router.post('/createImob', imovelController.createImob)
 router.get('/getImbos', imovelController.getImobs)
-router.get('/getMyImobs/:id', imovelController.getMyImobs)
+router.get('/getMyImobs/:id', imovelController.getMyImobs)   
 
 module.exports = router 
