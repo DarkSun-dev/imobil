@@ -6,9 +6,11 @@ router.post('/createItem', propertyController.createItem)
 router.get('/getItems', propertyController.getItems)
 router.get('/getMyItems/:id', propertyController.getMyItems)
 router.delete('/deleteItem/:id', propertyController.deleteItem)
+router.get('/queryItems', propertyController.fitnessQuery)  
 
 router.post('/createImob', imovelController.createImob)
 router.get('/getImbos', imovelController.getImobs)
-router.get('/getMyImobs/:id', imovelController.getMyImobs)   
+router.get('/getMyImobs/:id', imovelController.getMyImobs) 
+
 
 module.exports = router 
